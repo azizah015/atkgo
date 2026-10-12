@@ -1,0 +1,18 @@
+/* ==========================================================
+   ATKGO.ID — FILE CSS UTAMA
+   File ini hanya menggabungkan file CSS lain.
+   Edit file di bawah sesuai kebutuhan:
+
+   variables.css   → warna, font
+   base.css        → reset & gaya dasar (judul, teks, link)
+   layout.css      → container, header, navigasi, section, grid, footer
+   components.css  → tombol, kartu, produk, form, banner, toast
+   pages.css       → gaya khusus halaman (hero, tentang, kontak)
+   responsive.css  → tampilan tablet & ponsel
+   ========================================================== */
+@import url("variables.css");
+@import url("base.css");
+@import url("layout.css");
+@import url("components.css");
+@import url("pages.css");
+@import url("responsive.css");

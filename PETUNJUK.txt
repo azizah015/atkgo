@@ -1,0 +1,17 @@
+ATKGO.ID — STRUKTUR FILE
+
+index.html, produk.html, kategori.html, tentang.html, kontak.html  → halaman (terpisah)
+css/style.css       → file CSS utama (menggabungkan file di bawah)
+  css/variables.css   warna & font (ganti warna di sini)
+  css/base.css        gaya dasar (judul, teks)
+  css/layout.css      header, menu, section, grid, footer
+  css/components.css  tombol, kartu, produk, form, banner
+  css/pages.css       hero, halaman tentang, kontak
+  css/responsive.css  tampilan tablet (≤850px) & ponsel (≤520px)
+js/script.js        → menu mobile, keranjang, filter produk, form kontak
+                      (email tujuan: CONFIG.contactEmail di bagian atas)
+assets/img/logo.png → logo
+
+Tambah produk: salin satu blok <article class="product"> di produk.html,
+lalu ubah data-name, data-category, data-price, nama, dan harga.
+Buka index.html di browser. Jaga struktur folder tetap sama.

@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Produk | ATKGO.ID</title>
+  <meta name="description" content="ATKGO.ID — Mitra cerdas pengadaan alat tulis dan perlengkapan kantor.">
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="index.html">
+        <img src="assets/img/logo.png" width="47" height="48" alt="Logo ATKGO.ID">
+        <span>ATK<span class="go">GO</span>.ID</span>
+      </a>
+      <nav id="mainNav" aria-label="Menu utama">
+        <a href="index.html">Beranda</a><a href="produk.html" class="active" aria-current="page">Produk</a><a href="kategori.html">Kategori</a><a href="tentang.html">Tentang</a><a href="kontak.html">Kontak</a>
+      </nav>
+      <a class="nav-cta" href="kontak.html">Hubungi Kami →</a>
+      <button class="menu" id="menuBtn" type="button" aria-label="Buka menu" aria-controls="mainNav" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="section alt">
+      <div class="wrap">
+        <span class="eyebrow">KATALOG ATKGO.ID</span>
+        <h1 class="page-title">Produk <em>pilihan.</em></h1>
+        <p class="lead">Jelajahi alat tulis dan perlengkapan kantor. Harga di halaman ini merupakan contoh dan dapat disesuaikan dengan harga toko.</p>
+
+        <!-- Pencarian, filter, dan jumlah keranjang -->
+        <div class="actions">
+          <input id="searchProducts" class="search-input" placeholder="Cari produk..." aria-label="Cari produk">
+          <select id="filter" class="filter-select" aria-label="Filter kategori">
+            <option value="all">Semua kategori</option>
+            <option value="alat-tulis">Alat tulis</option>
+            <option value="buku-kertas">Buku &amp; kertas</option>
+            <option value="perlengkapan">Perlengkapan</option>
+          </select>
+          <span class="cart-pill" id="cartCount">Keranjang: 0</span>
+        </div>
+
+        <!-- Daftar produk: tambah produk baru dengan menyalin satu blok <article> -->
+        <div class="product-grid" id="products">
+          <article class="product" data-name="Crayon Warna" data-category="alat-tulis">
+            <div class="product-visual">CRAYON</div>
+            <div class="product-info">
+              <small>alat tulis</small>
+              <h3>Crayon Warna</h3>
+              <div class="price">Rp18.000</div>
+              <button class="add" type="button" data-name="Crayon Warna" data-price="18000">+ Tambah ke Keranjang</button>
+            </div>
+          </article>
+          <article class="product" data-name="Loose Leaf" data-category="buku-kertas">
+            <div class="product-visual">LOOSE LEAF</div>
+            <div class="product-info">
+              <small>buku kertas</small>
+              <h3>Loose Leaf</h3>
+              <div class="price">Rp12.000</div>
+              <button class="add" type="button" data-name="Loose Leaf" data-price="12000">+ Tambah ke Keranjang</button>
+            </div>
+          </article>
+          <article class="product" data-name="Pensil Warna" data-category="alat-tulis">
+            <div class="product-visual">WARNA</div>
+            <div class="product-info">
+              <small>alat tulis</small>
+              <h3>Pensil Warna</h3>
+              <div class="price">Rp25.000</div>
+              <button class="add" type="button" data-name="Pensil Warna" data-price="25000">+ Tambah ke Keranjang</button>
+            </div>
+          </article>
+          <article class="product" data-name="Gunting" data-category="perlengkapan">
+            <div class="product-visual">GUNTING</div>
+            <div class="product-info">
+              <small>perlengkapan</small>
+              <h3>Gunting</h3>
+              <div class="price">Rp10.000</div>
+              <button class="add" type="button" data-name="Gunting" data-price="10000">+ Tambah ke Keranjang</button>
+            </div>
+          </article>
+          <article class="product" data-name="Buku Tulis" data-category="buku-kertas">
+            <div class="product-visual">BUKU</div>
+            <div class="product-info">
+              <small>buku kertas</small>
+              <h3>Buku Tulis</h3>
+              <div class="price">Rp8.000</div>
+              <button class="add" type="button" data-name="Buku Tulis" data-price="8000">+ Tambah ke Keranjang</button>
+            </div>
+          </article>
+          <article class="product" data-name="Map / Binder" data-category="perlengkapan">
+            <div class="product-visual">BINDER</div>
+            <div class="product-info">
+              <small>perlengkapan</small>
+              <h3>Map / Binder</h3>
+              <div class="price">Rp15.000</div>
+              <button class="add" type="button" data-name="Map / Binder" data-price="15000">+ Tambah ke Keranjang</button>
+            </div>
+          </article>
+          <article class="product" data-name="Pulpen" data-category="alat-tulis">
+            <div class="product-visual">PULPEN</div>
+            <div class="product-info">
+              <small>alat tulis</small>
+              <h3>Pulpen</h3>
+              <div class="price">Rp5.000</div>
+              <button class="add" type="button" data-name="Pulpen" data-price="5000">+ Tambah ke Keranjang</button>
+            </div>
+          </article>
+          <article class="product" data-name="Kertas HVS" data-category="buku-kertas">
+            <div class="product-visual">HVS</div>
+            <div class="product-info">
+              <small>buku kertas</small>
+              <h3>Kertas HVS</h3>
+              <div class="price">Rp55.000</div>
+              <button class="add" type="button" data-name="Kertas HVS" data-price="55000">+ Tambah ke Keranjang</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="banner">
+          <div>
+            <h2>Ingin memesan?</h2>
+            <p>Tambahkan produk ke keranjang lalu hubungi kami untuk konfirmasi pesanan.</p>
+          </div>
+          <a class="btn btn-red" href="kontak.html">Lanjut ke Kontak →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <h3>ATKGO.ID</h3>
+          <p>Mitra cerdas pengadaan alat tulis dan perlengkapan kantor: lebih cepat, hemat, dan terpercaya.</p>
+        </div>
+        <div>
+          <h3>Menu</h3>
+          <div class="footer-links">
+            <a href="produk.html">Katalog Produk</a>
+            <a href="kategori.html">Kategori</a>
+            <a href="tentang.html">Tentang Kami</a>
+          </div>
+        </div>
+        <div>
+          <h3>Kontak</h3>
+          <div class="footer-links">
+            <a href="kontak.html">Hubungi ATKGO.ID</a>
+            <span>Indonesia</span>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">© 2026 ATKGO.ID. Semua hak dilindungi.</div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="js/script.js"></script>
+</body>
+</html>
