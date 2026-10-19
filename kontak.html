@@ -38,19 +38,35 @@
         </div>
 
         <form class="form card" id="contactForm">
-          <label>Nama<input id="nama" required placeholder="Nama kamu" autocomplete="name"></label>
-          <label>Email<input id="email" type="email" required placeholder="nama@email.com" autocomplete="email"></label>
-          <label>Keperluan
-            <select id="keperluan">
-              <option>Pertanyaan produk</option>
-              <option>Pemesanan produk</option>
-              <option>Kerja sama</option>
-              <option>Lainnya</option>
-            </select>
+           <div class="form-group">
+        <label for="nama">Nama</label>
+        <input
+            type="text"
+            id="nama"
+            name="nama"
+            placeholder="Masukkan nama Anda"
+            required
+        >
+    </div>
+
+    <!-- Email -->
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="nama@email.com"
+            required
+        >
+    </div>
+
           </label>
           <label>Pesan<textarea id="pesan" required placeholder="Tulis pesan kamu..."></textarea></label>
-          <button class="btn btn-red" type="submit">Siapkan Pesan →</button>
-          <small class="notice">Catatan: email tujuan diatur di file js/script.js (bagian CONFIG → contactEmail).</small>
+          <button class="btn btn-red" type="submit">Lanjut Pembayaran →
+          </button>
+        
+          <small class="notice"></small>
         </form>
       </div>
     </section>

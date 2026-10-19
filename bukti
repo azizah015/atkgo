@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Bukti Pesanan | ATKGO.ID</title>
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+
+    .receipt-wrap {
+
+      max-width: 800px;
+
+      margin: 50px auto;
+
+      padding: 24px;
+
+    }
+
+    .receipt {
+
+      background: #fff;
+
+      color: #202744;
+
+      border: 1px solid #e5e7eb;
+
+      border-radius: 18px;
+
+      padding: 32px;
+
+      box-shadow: 0 8px 30px rgba(0,0,0,.06);
+
+    }
+
+    .receipt-header {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      align-items: center;
+
+      flex-wrap: wrap;
+
+      border-bottom: 2px solid #eee;
+
+      padding-bottom: 20px;
+
+    }
+
+    .receipt h1, .receipt h2 {
+
+      margin-top: 0;
+
+    }
+
+    .receipt-muted {
+
+      color: #6b7280;
+
+      font-size: 14px;
+
+    }
+
+    .receipt-info {
+
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 16px;
+
+      margin: 24px 0;
+
+    }
+
+    .receipt-info p {
+
+      margin: 7px 0;
+
+      overflow-wrap: anywhere;
+
+    }
+
+    .receipt-table {
+
+      width: 100%;
+
+      border-collapse: collapse;
+
+      margin: 20px 0;
+
+    }
+
+    .receipt-table th, .receipt-table td {
+
+      padding: 12px 8px;
+
+      border-bottom: 1px solid #e5e7eb;
+
+      text-align: left;
+
+    }
+
+    .receipt-table th:last-child,
+
+    .receipt-table td:last-child {
+
+      text-align: right;
+
+    }
+
+    .receipt-total {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 12px;
+
+      font-size: 21px;
+
+      font-weight: 800;
+
+      padding: 18px 0;
+
+      border-top: 2px solid #202744;
+
+    }
+
+    .receipt-status {
+
+      background: #fff4d6;
+
+      color: #805600;
+
+      padding: 10px 14px;
+
+      border-radius: 8px;
+
+      display: inline-block;
+
+      font-weight: 700;
+
+    }
+
+    .receipt-actions {
+
+      display: flex;
+
+      gap: 12px;
+
+      flex-wrap: wrap;
+
+      margin-top: 22px;
+
+    }
+
+    .receipt-actions button, .receipt-actions a {
+
+      display: inline-block;
+
+      padding: 12px 18px;
+
+      border-radius: 8px;
+
+      border: 0;
+
+      text-decoration: none;
+
+      cursor: pointer;
+
+      font: inherit;
+
+      font-weight: 700;
+
+    }
+
+    .receipt-primary {
+
+      background: #b92f1e;
+
+      color: white;
+
+    }
+
+    .receipt-secondary {
+
+      background: #202744;
+
+      color: white;
+
+    }
+
+    @media (max-width: 600px) {
+
+      .receipt-wrap { margin: 20px auto; padding: 12px; }
+
+      .receipt { padding: 20px; }
+
+      .receipt-info { grid-template-columns: 1fr; }
+
+      .receipt-table th, .receipt-table td {
+
+        font-size: 13px;
+
+        padding: 10px 4px;
+
+      }
+
+    }
+
+    @media print {
+
+      body { background: white !important; }
+
+      .receipt-wrap { margin: 0; padding: 0; max-width: none; }
+
+      .receipt { box-shadow: none; border: 0; padding: 0; }
+
+      .receipt-actions, .site-header, header, footer {
+
+        display: none !important;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <main class="receipt-wrap">
+
+    <section class="receipt">
+
+      <div class="receipt-header">
+
+        <div>
+
+          <h1>ATKGO.ID</h1>
+
+          <p class="receipt-muted">Bukti Pesanan Layanan Digital</p>
+
+        </div>
+
+        <div>
+
+          <strong>Nomor Pesanan</strong>
+
+          <p id="nomor-pesanan">-</p>
+
+          <p class="receipt-muted" id="tanggal-pesanan">-</p>
+
+        </div>
+
+      </div>
+
+      <h2 style="margin-top:24px">Informasi Pelanggan</h2>
+
+      <div class="receipt-info">
+
+        <div>
+
+          <p><strong>Nama:</strong> <span id="pelanggan-nama">-</span></p>
+
+          <p><strong>Email:</strong> <span id="pelanggan-email">-</span></p>
+
+          <p><strong>WhatsApp:</strong> <span id="pelanggan-telepon">-</span></p>
+
+        </div>
+
+        <div>
+
+          <p><strong>Metode pembayaran:</strong></p>
+
+          <p id="metode-pembayaran">-</p>
+
+          <p><strong>Status transaksi:</strong></p>
+
+          <p><span class="receipt-status" id="status-pesanan">Menunggu pembayaran</span></p>
+
+        </div>
+
+      </div>
+
+      <h2>Layanan yang Dipesan</h2>
+
+      <div style="overflow-x:auto">
+
+        <table class="receipt-table">
+
+          <thead>
+
+            <tr>
+
+              <th>Layanan</th>
+
+              <th>Jumlah</th>
+
+              <th>Harga</th>
+
+              <th>Subtotal</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody id="rincian-layanan"></tbody>
+
+        </table>
+
+      </div>
+
+      <div class="receipt-total">
+
+        <span>Total Pesanan</span>
+
+        <span id="total-pesanan">Rp0</span>
+
+      </div>
+
+      <p class="receipt-muted">
+
+        Dokumen ini merupakan bukti pemesanan, bukan bukti bahwa pembayaran
+
+        telah berhasil. Status akan berubah setelah pembayaran diverifikasi.
+
+      </p>
+
+      <div class="receipt-actions">
+
+        <button class="receipt-primary" type="button" onclick="window.print()">
+
+          Cetak / Simpan PDF
+
+        </button>
+
+        <a class="receipt-secondary" href="produk.html">Kembali ke Layanan</a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <script>
+
+    function rupiah(value) {
+
+      return new Intl.NumberFormat('id-ID', {
+
+        style: 'currency',
+
+        currency: 'IDR',
+
+        maximumFractionDigits: 0
+
+      }).format(Number(value) || 0);
+
+    }
+
+    const pesanan = JSON.parse(
+
+      localStorage.getItem('atkgo_pesanan_terakhir') || 'null'
+
+    );
+
+    if (!pesanan) {
+
+      document.querySelector('.receipt').innerHTML = `
+
+        <h1>Pesanan tidak ditemukan</h1>
+
+        <p>Silakan pilih layanan dan lengkapi checkout terlebih dahulu.</p>
+
+        <a href="produk.html">Kembali ke Layanan</a>
+
+      `;
+
+    } else {
+
+      document.getElementById('nomor-pesanan').textContent = pesanan.nomor;
+
+      document.getElementById('tanggal-pesanan').textContent = pesanan.tanggal;
+
+      document.getElementById('pelanggan-nama').textContent = pesanan.nama;
+
+      document.getElementById('pelanggan-email').textContent = pesanan.email;
+
+      document.getElementById('pelanggan-telepon').textContent =
+
+        pesanan.telepon || '-';
+
+      document.getElementById('metode-pembayaran').textContent = pesanan.metode;
+
+      document.getElementById('status-pesanan').textContent = pesanan.status;
+
+      const tbody = document.getElementById('rincian-layanan');
+
+      let total = 0;
+
+      pesanan.layanan.forEach(function (item) {
+
+        const jumlah = Number(item.qty) || 1;
+
+        const harga = Number(item.price) || 0;
+
+        const subtotal = jumlah * harga;
+
+        total += subtotal;
+
+        const row = document.createElement('tr');
+
+        [item.name, jumlah, rupiah(harga), rupiah(subtotal)].forEach(
+
+          function (value) {
+
+            const cell = document.createElement('td');
+
+            cell.textContent = value;
+
+            row.appendChild(cell);
+
+          }
+
+        );
+
+        tbody.appendChild(row);
+
+      });
+
+      document.getElementById('total-pesanan').textContent = rupiah(total);
+
+    }
+
+  </script>
+
+</body>
+
+</html>

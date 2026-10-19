@@ -26,159 +26,139 @@
   <main>
     <section class="section alt">
       <div class="wrap">
-        <span class="eyebrow">KATALOG ATKGO.ID</span>
-        <h1 class="page-title">Produk <em>pilihan.</em></h1>
-        <p class="lead">Jelajahi alat tulis dan perlengkapan kantor. Harga di halaman ini merupakan contoh dan dapat disesuaikan dengan harga toko.</p>
+        <span class="eyebrow">Layanan  &amp; Mitra ATKGO </span>
+        <h1 class="page-title">Layanan <em>pilihan.</em></h1>
+        <p class="lead">Jelajahi berbagai paket layanan strategi konten, produksi visual, dan manajemen media sosial yang dirancang untuk memperkuat brand Anda. Nilai dan scope paket dapat disesuaikan dengan kebutuhan proyek Anda.</p>
 
         <!-- Pencarian, filter, dan jumlah keranjang -->
         <div class="actions">
           <input id="searchProducts" class="search-input" placeholder="Cari produk..." aria-label="Cari produk">
           <select id="filter" class="filter-select" aria-label="Filter kategori">
-            <option value="all">Semua kategori</option>
-            <option value="alat-tulis">Alat tulis</option>
-            <option value="buku-kertas">Buku &amp; kertas</option>
-            <option value="perlengkapan">Perlengkapan</option>
+            <option value="all">Semua Layanan</option>
+            <option value="paketan">Paket Layanan Agensi</option>
+            <option value="brand-development">Strategi Konten &amp; Brand </option>
+            <option value="buku-kertas">Produksi Visual &amp; Desain</option>
+            <option value="perlengkapan">Manajemen Media Sosial</option>
+             <option value="perlengkapan">Kreatif &amp; Dokumentasi </option>
           </select>
-          <span class="cart-pill" id="cartCount">Keranjang: 0</span>
+          <button class="cart-button" id="cart-button">
+
+    Keranjang: <span id="cart_count">1</span>
+
+</button>
         </div>
 
         <!-- Daftar produk: tambah produk baru dengan menyalin satu blok <article> -->
         <div class="product-grid" id="products">
-          <article class="product" data-name="Buku Tulis" data-category="buku-kertas">
+        <article class="product" data-name="Content Creator" data-category="paketan">
     <div class="product-visual">
-        <img src="img/.jpeg" alt="Buku Tulis">
+        <img src="img/keseluruhan agensi (2).jpeg" alt="Buku Tulis">
+    </div>
+    <div class="product-info">
+        <small>Paket layanan agensi</small>
+        <h3>Solusi digital marketing sesuai kebutuhan bisnis Anda.</h3>
+        <div class="price">Rp11.000</div>
+
+       <button
+
+  class="add"
+
+  type="button"
+
+  data-name="Paket Layanan Agensi"
+
+  data-price="11000"
+
+  data-qty="1">
+
+  Tambah Layanan
+
+</button>
+    </div>
+    
+</article>
+
+          <article class="product" data-name="Content Creator" data-category="brand-development">
+    <div class="product-visual">
+        <img src="img/keseluruhan agensi.jpeg" alt="Buku Tulis">
+    </div>
+    <div class="product-info">
+        <small>strategi content dan brend</small>
+        <h3>Perencanaan konten dan penguatan identitas merek.</h3>
+        <div class="price">Rp100.000</div>
+
+        <button
+    class="add" type="button"
+    class="btn-add-service"
+    data-name="strategi konten dan brand"
+    data-price="100000">
+    Tambah Layanan
+</button>
+    </div>
+</article>
+
+          <article class="product" data-name="Buku Tulis" data-category="produk layanan">
+    <div class="product-visual">
+        <img src="img/keseluruhan agensi.jpeg" alt="Buku Tulis">
     </div>
 
     <div class="product-info">
-        <small>buku kertas</small>
-        <h3>Buku Tulis</h3>
+        <small>Produksi visual dan desain </small>
+        <h3>Pembuatan desain promosi dan konten visual kreatif.</h3>
         <div class="price">Rp8.000</div>
 
-        <button class="add" type="button"
-            data-name="Buku Tulis"
-            data-price="8000">
-            + Tambah ke Keranjang
+       <button
+    class="add" type="button"
+    class="btn-add-service"
+    data-name="Produksi visual dan desain"
+    data-price="11000">
+    Tambah Layanan
+</button>
         </button>
     </div>
 </article>
-          <article class="product" data-name="Buku Tulis" data-category="buku-kertas">
+
+         <article class="product" data-name="Buku Tulis" data-category="alat-tulis">
     <div class="product-visual">
-        <img src="images/buku-tulis.jpg" alt="Buku Tulis">
+        <img src="img/keseluruhan agensi.jpeg" alt="Buku Tulis">
     </div>
 
     <div class="product-info">
-        <small>buku kertas</small>
-        <h3>Buku Tulis</h3>
+        <small>Manajemen media sosial</small>
+        <h3> Pengelolaan akun dan penjadwalan konten media sosial.</h3>
         <div class="price">Rp8.000</div>
 
-        <button class="add" type="button"
-            data-name="Buku Tulis"
-            data-price="8000">
-            + Tambah ke Keranjang
-        </button>
+        <button
+    class="add" type="button"
+    class="btn-add-service"
+    data-name="Manajemen media sosial"
+    data-price="11000">
+    Tambah Layanan
+</button>
     </div>
 </article>
-          <article class="product" data-name="Buku Tulis" data-category="buku-kertas">
-    <div class="product-visual">
-        <img src="images/buku-tulis.jpg" alt="Buku Tulis">
-    </div>
 
-    <div class="product-info">
-        <small>buku kertas</small>
-        <h3>Buku Tulis</h3>
-        <div class="price">Rp8.000</div>
-
-        <button class="add" type="button"
-            data-name="Buku Tulis"
-            data-price="8000">
-            + Tambah ke Keranjang
-        </button>
-    </div>
-</article>
          <article class="product" data-name="Buku Tulis" data-category="buku-kertas">
     <div class="product-visual">
-        <img src="images/buku-tulis.jpg" alt="Buku Tulis">
+        <img src="img/keseluruhan agensi.jpeg" alt="Buku Tulis">
     </div>
 
     <div class="product-info">
-        <small>buku kertas</small>
-        <h3>Buku Tulis</h3>
+        <small>Kreatif dan dokmentasi</small>
+        <h3>   Produksi foto, video promosi, dan dokumentasi kegiatan.</h3>
         <div class="price">Rp8.000</div>
 
-        <button class="add" type="button"
-            data-name="Buku Tulis"
-            data-price="8000">
-            + Tambah ke Keranjang
-        </button>
-    </div>
-</article>
-         <article class="product" data-name="Buku Tulis" data-category="buku-kertas">
-    <div class="product-visual">
-        <img src="images/buku-tulis.jpg" alt="Buku Tulis">
+        <button
+    class="add" type="button"
+    class="btn-add-service"
+    data-name="Produksi foto, video, dan dokumentasi"
+    data-price="8000">
+    Tambah Layanan
+</button>
     </div>
 
-    <div class="product-info">
-        <small>buku kertas</small>
-        <h3>Buku Tulis</h3>
-        <div class="price">Rp8.000</div>
 
-        <button class="add" type="button"
-            data-name="Buku Tulis"
-            data-price="8000">
-            + Tambah ke Keranjang
-        </button>
-    </div>
-</article>
-        <article class="product" data-name="Buku Tulis" data-category="buku-kertas">
-    <div class="product-visual">
-        <img src="images/buku-tulis.jpg" alt="Buku Tulis">
-    </div>
 
-    <div class="product-info">
-        <small>buku kertas</small>
-        <h3>Buku Tulis</h3>
-        <div class="price">Rp8.000</div>
-
-        <button class="add" type="button"
-            data-name="Buku Tulis"
-            data-price="8000">
-            + Tambah ke Keranjang
-        </button>
-    </div>
-</article>
-         <article class="product" data-name="Buku Tulis" data-category="buku-kertas">
-    <div class="product-visual">
-        <img src="images/buku-tulis.jpg" alt="Buku Tulis">
-    </div>
-
-    <div class="product-info">
-        <small>buku kertas</small>
-        <h3>Buku Tulis</h3>
-        <div class="price">Rp8.000</div>
-
-        <button class="add" type="button"
-            data-name="Buku Tulis"
-            data-price="8000">
-            + Tambah ke Keranjang
-        </button>
-    </div>
-</article>
-        <article class="product" data-name="Buku Tulis" data-category="buku-kertas">
-    <div class="product-visual">
-        <img src="images/buku-tulis.jpg" alt="Buku Tulis">
-    </div>
-
-    <div class="product-info">
-        <small>buku kertas</small>
-        <h3>Buku Tulis</h3>
-        <div class="price">Rp8.000</div>
-
-        <button class="add" type="button"
-            data-name="Buku Tulis"
-            data-price="8000">
-            + Tambah ke Keranjang
-        </button>
-    </div>
 </article>
         </div>
       </div>
@@ -191,7 +171,7 @@
             <h2>Ingin memesan?</h2>
             <p>Tambahkan produk ke keranjang lalu hubungi kami untuk konfirmasi pesanan.</p>
           </div>
-          <a class="btn btn-red" href="kontak.html">Lanjut ke Kontak →</a>
+          <a class="btn btn-red" href="kontak.html" >Lanjut ke Pembayaran →</a>
         </div>
       </div>
     </section>

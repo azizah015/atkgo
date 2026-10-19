@@ -101,23 +101,26 @@ body {
 /* AREA GAMBAR PRODUK */
 .product-visual {
     width: 100%;
-    height: 150px;
+    height: 240px;
+    padding: 12px;
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #fff9e9;
     overflow: hidden;
+    background-color: #f8f6f1;
+}
 }
 
 .product-visual img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    padding: 10px;
-    box-sizing: border-box;
+    object-position: center;
     display: block;
+    padding: 0;
+    margin: 0;
 }
-
 /* INFO PRODUK */
 .product-info {
     padding: 12px;
