@@ -1,198 +1,3 @@
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Pembayaran Layanan | ATKGO.ID</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            padding: 30px 15px;
-            font-family: Arial, sans-serif;
-            background: #f8f6f1;
-            color: #252641;
-        }
-
-        .payment-container {
-            max-width: 650px;
-            margin: 30px auto;
-            padding: 30px;
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        }
-
-        h1 {
-            margin-bottom: 10px;
-            color: #3A3B5A;
-        }
-
-        .description {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        .order-box {
-            margin: 25px 0;
-            padding: 20px;
-            background: #f5f5f8;
-            border-radius: 12px;
-        }
-
-        .order-item {
-            display: flex;
-            justify-content: space-between;
-            gap: 15px;
-            margin: 12px 0;
-        }
-
-        .total {
-            padding-top: 15px;
-            margin-top: 15px;
-            border-top: 1px solid #ddd;
-            font-size: 20px;
-            font-weight: bold;
-        }
-
-        label {
-            display: block;
-            margin: 18px 0 8px;
-            font-weight: bold;
-        }
-
-        input, select {
-            width: 100%;
-            padding: 13px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 15px;
-        }
-
-        button {
-            width: 100%;
-            margin-top: 25px;
-            padding: 15px;
-            border: none;
-            border-radius: 9px;
-            background: #EF3938;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #d92f30;
-        }
-
-        .back-link {
-            display: block;
-            margin-top: 18px;
-            text-align: center;
-            color: #3A3B5A;
-            text-decoration: none;
-        }
-
-        .note {
-            margin-top: 18px;
-            font-size: 13px;
-            color: #777;
-            line-height: 1.6;
-        }
-    </style>
-</head>
-
-<body>
-
-    <main class="payment-container">
-
-        <h1>Checkout Layanan</h1>
-
-        <p class="description">
-            Lengkapi informasi berikut untuk melanjutkan pemesanan
-            layanan digital marketing ATKGO.ID.
-        </p>
-
-        <div class="order-box">
-            <h3>Ringkasan Pesanan</h3>
-
-            <div id="daftar-layanan">
-                Memuat layanan...
-            </div>
-
-            <div class="order-item total">
-                <span>Total</span>
-                <span id="total-harga">Rp0</span>
-            </div>
-        </div>
-
-    <label for="metode">Metode Pembayaran</label>
-
-<select id="metode" name="metode" required>
-
-    <option value="">Pilih metode pembayaran</option>
-
-    <option value="DANA">DANA</option>
-
-    <option value="OVO">OVO</option>
-
-    <option value="GoPay">GoPay</option>
-
-    <option value="Mandiri">Mandiri</option>
-
-</select>
-            <label for="email">Email</label>
-            <input
-                type="email"
-                id="email"
-                placeholder="nama@email.com"
-                required
-            >
-
-            <label for="telepon">Nomor WhatsApp</label>
-            <input
-                type="tel"
-                id="telepon"
-                placeholder="08xxxxxxxxxx"
-                required
-            >
-
-            <label for="metode">Metode Pembayaran</label>
-
-            <select id="metode" required>
-                <option value="">Pilih metode pembayaran</option>
-                <option value="Transfer Bank">Transfer Bank</option>
-                <option value="QRIS">QRIS</option>
-                <option value="Konsultasi Pembayaran">
-                    Konsultasi Pembayaran
-                </option>
-            </select>
-
-            <button type="submit">
-                Konfirmasi Pesanan
-            </button>
-
-        </form>
-
-        <p class="note">
-            Pesanan akan dikirim ke WhatsApp ATKGO.ID untuk
-            konfirmasi layanan dan instruksi pembayaran.
-        </p>
-
-        <a href="produk.html" class="back-link">
-            ← Kembali ke Daftar Layanan
-        </a>
-
-    </main>
-
-    <script src="js/script.js"></script>
-
-</body>
-</html>
 <!DOCTYPE html>
 
 <html lang="id">
@@ -203,7 +8,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Pembayaran | ATKGO.ID</title>
+    <title>Pembayaran Layanan | ATKGO.ID</title>
 
     <style>
 
@@ -217,75 +22,73 @@
 
             margin: 0;
 
-            padding: 30px 16px;
+            padding: 30px 15px;
 
             font-family: Arial, sans-serif;
 
-            background: #fff8ef;
+            background: #f8f6f1;
 
-            color: #17213f;
+            color: #252641;
 
         }
 
         .payment-container {
 
-            width: 100%;
+            max-width: 700px;
 
-            max-width: 760px;
-
-            margin: 40px auto;
+            margin: 30px auto;
 
             padding: 30px;
 
-            background: #ffffff;
+            background: white;
 
             border-radius: 16px;
 
-            box-shadow: 0 8px 30px rgba(23, 33, 63, 0.08);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
 
         }
 
         h1 {
 
-            margin-top: 0;
-
-            color: #17213f;
+            color: #3A3B5A;
 
         }
 
-        .customer-info {
+        .description, .note {
 
-            margin: 24px 0;
+            color: #666;
 
-            padding: 18px;
-
-            background: #f7f7f9;
-
-            border-radius: 10px;
-
-            line-height: 1.8;
-
-            overflow-wrap: anywhere;
+            line-height: 1.7;
 
         }
 
-        .service-row {
+        .order-box, .receipt {
+
+            margin: 25px 0;
+
+            padding: 20px;
+
+            background: #f5f5f8;
+
+            border-radius: 12px;
+
+        }
+
+        .order-item, .service-row {
 
             display: flex;
 
             justify-content: space-between;
 
-            gap: 16px;
+            gap: 15px;
 
-            padding: 16px 0;
-
-            border-bottom: 1px solid #e8e8e8;
+            margin: 14px 0;
 
         }
 
         .service-name {
 
-            font-weight: 600;
+            overflow-wrap: anywhere;
 
         }
 
@@ -295,19 +98,11 @@
 
         }
 
-        .total-row {
+        .total {
 
-            display: flex;
+            padding-top: 15px;
 
-            justify-content: space-between;
-
-            gap: 16px;
-
-            margin-top: 20px;
-
-            padding-top: 20px;
-
-            border-top: 2px solid #17213f;
+            border-top: 1px solid #ddd;
 
             font-size: 20px;
 
@@ -315,31 +110,49 @@
 
         }
 
-        .payment-note {
+        label {
 
-            margin: 24px 0;
+            display: block;
 
-            color: #666;
+            margin: 18px 0 8px;
 
-            line-height: 1.6;
+            font-weight: bold;
 
         }
 
-        .btn-payment {
+        input, select, textarea {
+
+            width: 100%;
+
+            padding: 13px;
+
+            border: 1px solid #ddd;
+
+            border-radius: 8px;
+
+            font-size: 15px;
+
+            font-family: inherit;
+
+        }
+
+        button, .button-link {
 
             display: block;
 
             width: 100%;
 
+            margin-top: 18px;
+
             padding: 15px;
 
             border: none;
 
-            border-radius: 10px;
+            border-radius: 9px;
 
-            background: #df332b;
+            background: #EF3938;
 
-            color: #fff;
+            color: white;
 
             font-size: 16px;
 
@@ -353,17 +166,71 @@
 
         }
 
-        .btn-back {
+        button:hover, .button-link:hover {
+
+            background: #d92f30;
+
+        }
+
+        .secondary {
+
+            background: #3A3B5A;
+
+        }
+
+        .back-link {
 
             display: block;
 
-            margin-top: 14px;
-
-            color: #17213f;
+            margin-top: 18px;
 
             text-align: center;
 
+            color: #3A3B5A;
+
             text-decoration: none;
+
+        }
+
+        .status {
+
+            font-weight: bold;
+
+            color: #a65b00;
+
+        }
+
+        [hidden] {
+
+            display: none !important;
+
+        }
+
+        @media print {
+
+            body {
+
+                padding: 0;
+
+                background: white;
+
+            }
+
+            .payment-container {
+
+                max-width: 100%;
+
+                margin: 0;
+
+                box-shadow: none;
+
+            }
+
+            .no-print {
+
+                display: none !important;
+
+            }
 
         }
 
@@ -381,12 +248,6 @@
 
             }
 
-            .total-row {
-
-                font-size: 18px;
-
-            }
-
         }
 
     </style>
@@ -395,174 +256,565 @@
 
 <body>
 
-    <main class="payment-container">
+<main class="payment-container">
 
-        <h1>Ringkasan Pembayaran</h1>
+    <h1>Checkout Layanan</h1>
+
+    <p class="description">
+
+        Periksa layanan yang dipilih dan lengkapi informasi pemesanan
+
+        sebelum mengirim konfirmasi kepada ATKGO.ID.
+
+    </p>
+
+    <section class="order-box">
+
+        <h3>Ringkasan Pesanan</h3>
+
+        <div id="daftar-layanan">
+
+            Memuat layanan...
+
+        </div>
+
+        <div class="order-item total">
+
+            <span>Total</span>
+
+            <span id="total-harga">Rp0</span>
+
+        </div>
+
+    </section>
+
+    <form id="form-pembayaran" class="no-print">
+
+        <label for="nama">Nama Lengkap</label>
+
+        <input
+
+            type="text"
+
+            id="nama"
+
+            autocomplete="name"
+
+            placeholder="Masukkan nama lengkap"
+
+            required
+
+        >
+
+        <label for="email">Email</label>
+
+        <input
+
+            type="email"
+
+            id="email"
+
+            autocomplete="email"
+
+            placeholder="nama@email.com"
+
+            required
+
+        >
+
+        <label for="telepon">Nomor WhatsApp</label>
+
+        <input
+
+            type="tel"
+
+            id="telepon"
+
+            autocomplete="tel"
+
+            placeholder="08xxxxxxxxxx"
+
+            required
+
+        >
+
+        <label for="metode">Metode Pembayaran</label>
+
+        <select id="metode" required>
+
+            <option value="">Pilih metode pembayaran</option>
+
+            <option value="DANA">DANA</option>
+
+            <option value="OVO">OVO</option>
+
+            <option value="GoPay">GoPay</option>
+
+            <option value="Transfer Bank Mandiri">
+
+                Transfer Bank Mandiri
+
+            </option>
+
+            <option value="QRIS">QRIS</option>
+
+            <option value="Konsultasi Pembayaran">
+
+                Konsultasi Pembayaran
+
+            </option>
+
+        </select>
+
+        <label for="catatan">Catatan Pesanan (opsional)</label>
+
+        <textarea
+
+            id="catatan"
+
+            rows="3"
+
+            placeholder="Tuliskan kebutuhan atau catatan tambahan"
+
+        ></textarea>
+
+        <button type="submit">Konfirmasi Pesanan</button>
+
+    </form>
+
+    <section id="bukti-pesanan" class="receipt" hidden>
+
+        <h2>Bukti Pemesanan ATKGO.ID</h2>
 
         <p>
 
-            Periksa kembali layanan yang kamu pilih sebelum
+            <strong>Nomor Pesanan:</strong>
 
-            melanjutkan proses pembayaran.
-
-        </p>
-
-        <div class="customer-info">
-
-            <strong>Informasi Pelanggan</strong>
-
-            <div>Nama: <span id="customer-name">-</span></div>
-
-            <div>Email: <span id="customer-email">-</span></div>
-
-            <div>Pesan: <span id="customer-message">-</span></div>
-
-        </div>
-
-        <h2>Layanan yang Dipilih</h2>
-
-        <div id="service-list"></div>
-
-        <div class="total-row">
-
-            <span>Total Harga</span>
-
-            <span id="total-price">Rp0</span>
-
-        </div>
-
-        <p class="payment-note">
-
-            Total di atas merupakan ringkasan harga layanan yang
-
-            dipilih. Konfirmasi pesanan dan metode pembayaran
-
-            perlu diselesaikan sebelum pembayaran dilakukan.
+            <span id="nomor-pesanan"></span>
 
         </p>
 
-        <button
+        <p>
 
-            type="button"
+            <strong>Tanggal:</strong>
 
-            class="btn-payment"
+            <span id="tanggal-pesanan"></span>
 
-            id="confirm-order">
+        </p>
 
-            Konfirmasi Pesanan
+        <hr>
+
+        <p><strong>Nama:</strong> <span id="bukti-nama"></span></p>
+
+        <p><strong>Email:</strong> <span id="bukti-email"></span></p>
+
+        <p><strong>WhatsApp:</strong> <span id="bukti-telepon"></span></p>
+
+        <p><strong>Metode Pembayaran:</strong> <span id="bukti-metode"></span></p>
+
+        <h3>Rincian Layanan</h3>
+
+        <div id="bukti-layanan"></div>
+
+        <div class="order-item total">
+
+            <span>Total Pesanan</span>
+
+            <span id="bukti-total"></span>
+
+        </div>
+
+        <p>
+
+            <strong>Status Transaksi:</strong>
+
+            <span class="status" id="bukti-status">
+
+                Menunggu Konfirmasi Pembayaran
+
+            </span>
+
+        </p>
+
+        <p class="note">
+
+            Bukti ini merupakan bukti pemesanan, bukan bukti pembayaran
+
+            lunas. Pembayaran baru dinyatakan berhasil setelah diterima
+
+            dan diverifikasi oleh pihak ATKGO.ID.
+
+        </p>
+
+    </section>
+
+    <div id="aksi-bukti" class="no-print" hidden>
+
+        <button type="button" id="cetak-bukti">
+
+            Cetak / Simpan Bukti sebagai PDF
 
         </button>
 
-        <a href="produk.html" class="btn-back">
+    </div>
 
-            ← Kembali ke Layanan
+    <p class="note">
 
-        </a>
+        Setelah konfirmasi, pesanan perlu diperiksa dan pembayaran
 
-    </main>
+        diverifikasi oleh ATKGO.ID.
 
-    <script>
-const keranjang = JSON.parse(
+    </p>
 
-    localStorage.getItem("atkgo_cart") || "[]"
+    <a href="produk.html" class="back-link no-print">
 
-);
+        ← Kembali ke Daftar Layanan
 
-const daftarLayanan = document.getElementById("service-list");
+    </a>
 
-const totalHarga = document.getElementById("total-price");
+</main>
 
-function formatRupiah(angka) {
+<script>
 
-    return new Intl.NumberFormat("id-ID", {
+(function () {
 
-        style: "currency",
+    'use strict';
 
-        currency: "IDR",
+    const KUNCI_KERANJANG = 'atkgo_cart';
 
-        maximumFractionDigits: 0
+    const KUNCI_PESANAN = 'atkgo_pesanan';
 
-    }).format(angka);
+    const daftarLayanan = document.getElementById('daftar-layanan');
 
-}
+    const totalHarga = document.getElementById('total-harga');
 
-let total = 0;
+    const form = document.getElementById('form-pembayaran');
 
-if (keranjang.length === 0) {
+    function formatRupiah(angka) {
 
-    daftarLayanan.textContent =
+        return new Intl.NumberFormat('id-ID', {
 
-        "Belum ada layanan yang dipilih.";
+            style: 'currency',
 
-} else {
+            currency: 'IDR',
 
-    keranjang.forEach(function (layanan) {
+            maximumFractionDigits: 0
 
-        const jumlah = Number(layanan.qty) || 1;
+        }).format(angka);
 
-        const subtotal = (Number(layanan.price) || 0) * jumlah;
+    }
 
-        const baris = document.createElement("div");
+    function bacaKeranjang() {
 
-        baris.className = "service-row";
+        try {
 
-        const nama = document.createElement("span");
+            const data = JSON.parse(
 
-        nama.className = "service-name";
+                localStorage.getItem(KUNCI_KERANJANG) || '[]'
 
-        nama.textContent =
+            );
 
-            layanan.name + " × " + jumlah;
+            if (!Array.isArray(data)) return [];
 
-        const harga = document.createElement("span");
+            return data.map(function (item) {
 
-        harga.className = "service-price";
+                return {
 
-        harga.textContent = formatRupiah(subtotal);
+                    name: String(item.name || item.nama || 'Layanan'),
 
-        baris.appendChild(nama);
+                    price: Math.max(
 
-        baris.appendChild(harga);
+                        0,
 
-        daftarLayanan.appendChild(baris);
+                        Number(item.price ?? item.harga) || 0
 
-        total += subtotal;
+                    ),
 
-    });
+                    qty: Math.max(
 
-}
+                        1,
 
-totalHarga.textContent = formatRupiah(total);
+                        Number(item.qty ?? item.quantity ?? item.jumlah) || 1
 
-        // Tombol konfirmasi
+                    )
 
-        document.getElementById("confirm-order")
-
-            .addEventListener("click", function () {
-
-                if (keranjang.length === 0) {
-
-                    alert("Belum ada layanan yang dipilih.");
-
-                    window.location.href = "produk.html";
-
-                    return;
-
-                }
-
-                alert(
-
-                    "Ringkasan pesanan berhasil dikonfirmasi. " +
-
-                    "Total: " + formatRupiah(total) +
-
-                    ". Silakan hubungi ATKGO.ID untuk konfirmasi pembayaran."
-
-                );
+                };
 
             });
 
-    </script>
+        } catch (error) {
+
+            return [];
+
+        }
+
+    }
+
+    let keranjang = bacaKeranjang();
+
+    let total = 0;
+
+    function tampilkanKeranjang() {
+
+        daftarLayanan.replaceChildren();
+
+        total = 0;
+
+        if (keranjang.length === 0) {
+
+            daftarLayanan.textContent =
+
+                'Keranjang masih kosong. Silakan pilih layanan terlebih dahulu.';
+
+            totalHarga.textContent = formatRupiah(0);
+
+            form.querySelector('button[type="submit"]').disabled = true;
+
+            return;
+
+        }
+
+        form.querySelector('button[type="submit"]').disabled = false;
+
+        keranjang.forEach(function (item) {
+
+            const subtotal = item.price * item.qty;
+
+            total += subtotal;
+
+            const baris = document.createElement('div');
+
+            baris.className = 'service-row';
+
+            const nama = document.createElement('span');
+
+            nama.className = 'service-name';
+
+            nama.textContent = item.name + ' × ' + item.qty;
+
+            const harga = document.createElement('span');
+
+            harga.className = 'service-price';
+
+            harga.textContent = formatRupiah(subtotal);
+
+            baris.append(nama, harga);
+
+            daftarLayanan.appendChild(baris);
+
+        });
+
+        totalHarga.textContent = formatRupiah(total);
+
+    }
+
+    function nomorPesananBaru() {
+
+        const waktu = new Date();
+
+        const tanggal = waktu.getFullYear() +
+
+            String(waktu.getMonth() + 1).padStart(2, '0') +
+
+            String(waktu.getDate()).padStart(2, '0');
+
+        const acak = Math.random().toString(36)
+
+            .slice(2, 8).toUpperCase();
+
+        return 'ATK-' + tanggal + '-' + acak;
+
+    }
+
+    function tambahRincianBukti(pesanan) {
+
+        const wadah = document.getElementById('bukti-layanan');
+
+        wadah.replaceChildren();
+
+        pesanan.layanan.forEach(function (item) {
+
+            const baris = document.createElement('p');
+
+            baris.textContent =
+
+                item.name + ' × ' + item.qty + ' — ' +
+
+                formatRupiah(item.price * item.qty);
+
+            wadah.appendChild(baris);
+
+        });
+
+    }
+
+    function tampilkanBukti(pesanan) {
+
+        document.getElementById('bukti-pesanan').hidden = false;
+
+        document.getElementById('aksi-bukti').hidden = false;
+
+        document.getElementById('nomor-pesanan').textContent =
+
+            pesanan.nomor;
+
+        document.getElementById('tanggal-pesanan').textContent =
+
+            pesanan.tanggal;
+
+        document.getElementById('bukti-nama').textContent =
+
+            pesanan.nama;
+
+        document.getElementById('bukti-email').textContent =
+
+            pesanan.email;
+
+        document.getElementById('bukti-telepon').textContent =
+
+            pesanan.telepon;
+
+        document.getElementById('bukti-metode').textContent =
+
+            pesanan.metode;
+
+        document.getElementById('bukti-status').textContent =
+
+            pesanan.status;
+
+        document.getElementById('bukti-total').textContent =
+
+            formatRupiah(pesanan.total);
+
+        tambahRincianBukti(pesanan);
+
+    }
+
+    form.addEventListener('submit', function (event) {
+
+        event.preventDefault();
+
+        keranjang = bacaKeranjang();
+
+        if (keranjang.length === 0) {
+
+            alert('Keranjang kosong. Silakan pilih layanan terlebih dahulu.');
+
+            return;
+
+        }
+
+        const nama = document.getElementById('nama').value.trim();
+
+        const email = document.getElementById('email').value.trim();
+
+        const telepon = document.getElementById('telepon').value.trim();
+
+        const metode = document.getElementById('metode').value;
+
+        const catatan = document.getElementById('catatan').value.trim();
+
+        if (!nama || !email || !telepon || !metode) {
+
+            alert('Mohon lengkapi informasi pemesanan.');
+
+            return;
+
+        }
+
+        const totalPesanan = keranjang.reduce(function (jumlah, item) {
+
+            return jumlah + item.price * item.qty;
+
+        }, 0);
+
+        const pesanan = {
+
+            nomor: nomorPesananBaru(),
+
+            tanggal: new Date().toLocaleString('id-ID'),
+
+            nama: nama,
+
+            email: email,
+
+            telepon: telepon,
+
+            metode: metode,
+
+            catatan: catatan,
+
+            layanan: keranjang,
+
+            total: totalPesanan,
+
+            status: 'Menunggu Konfirmasi Pembayaran'
+
+        };
+
+        try {
+
+            localStorage.setItem(
+
+                KUNCI_PESANAN,
+
+                JSON.stringify(pesanan)
+
+            );
+
+        } catch (error) {
+
+            alert('Pesanan tidak dapat disimpan di browser ini.');
+
+            return;
+
+        }
+
+        tampilkanBukti(pesanan);
+
+        document.getElementById('bukti-pesanan').scrollIntoView({
+
+            behavior: 'smooth',
+
+            block: 'start'
+
+        });
+
+    });
+
+    document.getElementById('cetak-bukti').addEventListener('click', function () {
+
+        window.print();
+
+    });
+
+    tampilkanKeranjang();
+
+    // Pulihkan bukti terakhir jika halaman dibuka kembali.
+
+    try {
+
+        const tersimpan = JSON.parse(
+
+            localStorage.getItem(KUNCI_PESANAN) || 'null'
+
+        );
+
+        if (tersimpan && tersimpan.nomor) {
+
+            tampilkanBukti(tersimpan);
+
+        }
+
+    } catch (error) {
+
+        console.warn('Bukti pesanan sebelumnya tidak dapat dibaca.');
+
+    }
+
+})();
+
+</script>
 
 </body>
 

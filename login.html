@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | ATKGO.ID Digital Agency</title>
+
+    <style>
+
+        * {
+
+            box-sizing: border-box;
+
+        }
+
+        body {
+
+            margin: 0;
+
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 24px;
+
+            font-family: Arial, sans-serif;
+
+            background: #f8f6f1;
+
+            color: #252641;
+
+        }
+
+        .login-container {
+
+            width: 100%;
+
+            max-width: 950px;
+
+            min-height: 530px;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            overflow: hidden;
+
+            background: white;
+
+            border-radius: 22px;
+
+            box-shadow: 0 12px 40px rgba(37, 38, 65, 0.12);
+
+        }
+
+        .login-banner {
+
+            padding: 45px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            background: #252641;
+
+            color: white;
+
+        }
+
+        .brand {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin-bottom: 55px;
+
+            font-size: 23px;
+
+            font-weight: bold;
+
+        }
+
+        .brand img {
+
+            width: 55px;
+
+            height: 55px;
+
+            object-fit: contain;
+
+            background: white;
+
+            border-radius: 50%;
+
+        }
+
+        .brand span span {
+
+            color: #ef3938;
+
+        }
+
+        .login-banner h1 {
+
+            margin: 0 0 18px;
+
+            font-size: 38px;
+
+            line-height: 1.2;
+
+        }
+
+        .login-banner h1 em {
+
+            color: #ef6258;
+
+            font-style: normal;
+
+        }
+
+        .login-banner p {
+
+            color: #e0e0e8;
+
+            line-height: 1.8;
+
+        }
+
+        .login-form {
+
+            padding: 50px 40px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+        }
+
+        .login-form h2 {
+
+            margin: 0 0 10px;
+
+            font-size: 29px;
+
+        }
+
+        .subtitle {
+
+            margin-bottom: 28px;
+
+            color: #777;
+
+            line-height: 1.6;
+
+        }
+
+        label {
+
+            margin: 16px 0 8px;
+
+            font-weight: bold;
+
+            font-size: 14px;
+
+        }
+
+        input {
+
+            width: 100%;
+
+            padding: 14px;
+
+            border: 1px solid #ddd;
+
+            border-radius: 9px;
+
+            font-size: 15px;
+
+            outline: none;
+
+        }
+
+        input:focus {
+
+            border-color: #ef3938;
+
+            box-shadow: 0 0 0 3px rgba(239, 57, 56, 0.1);
+
+        }
+
+        .password-box {
+
+            position: relative;
+
+        }
+
+        .password-box input {
+
+            padding-right: 65px;
+
+        }
+
+        .show-password {
+
+            position: absolute;
+
+            right: 10px;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            border: none;
+
+            background: transparent;
+
+            color: #555;
+
+            cursor: pointer;
+
+        }
+
+        .login-button {
+
+            width: 100%;
+
+            margin-top: 26px;
+
+            padding: 15px;
+
+            border: none;
+
+            border-radius: 9px;
+
+            background: #ef3938;
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+        }
+
+        .login-button:hover {
+
+            background: #d92f30;
+
+        }
+
+        .message {
+
+            margin-top: 16px;
+
+            font-size: 14px;
+
+            line-height: 1.6;
+
+        }
+
+        .back-home {
+
+            display: block;
+
+            margin-top: 24px;
+
+            text-align: center;
+
+            color: #252641;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+        }
+
+        @media (max-width: 700px) {
+
+            .login-container {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .login-banner {
+
+                padding: 28px;
+
+            }
+
+            .brand {
+
+                margin-bottom: 25px;
+
+            }
+
+            .login-banner h1 {
+
+                font-size: 29px;
+
+            }
+
+            .login-form {
+
+                padding: 32px 25px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <main class="login-container">
+
+        <section class="login-banner">
+
+            <div class="brand">
+
+                <img src="assets/img/logo.png" alt="Logo ATKGO.ID">
+
+                <span>ATK<span>GO</span>.ID</span>
+
+            </div>
+
+            <h1>Selamat Datang di <em>ATKGO.ID</em></h1>
+
+            <p>
+
+                Masuk untuk menjelajahi layanan digital marketing,
+
+                strategi konten, pengelolaan media sosial,
+
+                dan produksi visual kreatif untuk bisnis Anda.
+
+            </p>
+
+        </section>
+
+        <section class="login-form">
+
+            <h2>Login Akun</h2>
+
+            <p class="subtitle">
+
+                Silakan masukkan email dan kata sandi untuk melanjutkan.
+
+            </p>
+
+            <form id="loginForm">
+
+                <label for="email">Email</label>
+
+                <input
+
+                    type="email"
+
+                    id="email"
+
+                    placeholder="nama@email.com"
+
+                    autocomplete="username"
+
+                    required
+
+                >
+
+                <label for="password">Kata Sandi</label>
+
+                <div class="password-box">
+
+                    <input
+
+                        type="password"
+
+                        id="password"
+
+                        placeholder="Masukkan kata sandi"
+
+                        autocomplete="current-password"
+
+                        required
+
+                    >
+
+                    <button
+
+                        type="button"
+
+                        class="show-password"
+
+                        id="showPassword">
+
+                        Lihat
+
+                    </button>
+
+                </div>
+
+                <button type="submit" class="login-button">
+
+                    Masuk ke Beranda →
+
+                </button>
+
+                <div
+
+                    id="message"
+
+                    class="message"
+
+                    role="status">
+
+                </div>
+
+            </form>
+
+            <a href="index.html" class="back-home">
+
+                ← Kembali ke Beranda
+
+            </a>
+
+        </section>
+
+    </main>
+
+    <script>
+
+        const form = document.getElementById('loginForm');
+
+        const password = document.getElementById('password');
+
+        const showPassword = document.getElementById('showPassword');
+
+        const message = document.getElementById('message');
+
+        showPassword.addEventListener('click', function () {
+
+            const isPassword = password.type === 'password';
+
+            password.type = isPassword ? 'text' : 'password';
+
+            showPassword.textContent = isPassword ? 'Sembunyi' : 'Lihat';
+
+        });
+
+        form.addEventListener('submit', function (event) {
+
+    event.preventDefault();
+
+    const email = document.getElementById('email').value.trim();
+
+    const kataSandi = document.getElementById('password').value;
+
+    if (!email || !kataSandi) {
+
+        message.style.color = 'red';
+
+        message.textContent = 'Email dan kata sandi wajib diisi.';
+
+        return;
+
+    }
+
+    message.style.color = 'green';
+
+    message.textContent = 'Login berhasil. Mengarahkan ke beranda...';
+
+    setTimeout(function () {
+
+        window.location.href = 'index.html';
+
+    }, 1000);
+
+});
+    </script>
+
+</body>
+
+</html>
