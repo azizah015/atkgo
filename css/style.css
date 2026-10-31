@@ -187,3 +187,176 @@ body {
         width: 125px;
     }
 }
+/* =====================================
+
+   TEMA ELEGAN ATKGO.ID DIGITAL AGENCY
+
+   ===================================== */
+
+body {
+
+    background-color: #FAF7F2;
+
+    color: #333333;
+
+}
+
+/* Header dan navigasi */
+
+header {
+
+    background-color: #FFFFFF;
+
+}
+
+.brand,
+
+nav a {
+
+    color: #363653;
+
+}
+
+nav a:hover,
+
+nav a.active {
+
+    color: #C7473A;
+
+}
+
+/* Tombol utama */
+
+.btn-red,
+
+.nav-cta,
+
+button.cart-button {
+
+    background-color: #C7473A;
+
+    color: #FFFFFF;
+
+    border-color: #C7473A;
+
+    transition: background-color 0.3s ease;
+
+}
+
+.btn-red:hover,
+
+.nav-cta:hover,
+
+button.cart-button:hover {
+
+    background-color: #A9362D;
+
+}
+
+/* Tombol sekunder */
+
+.btn-outline {
+
+    color: #363653;
+
+    border-color: #363653;
+
+    background-color: transparent;
+
+}
+
+.btn-outline:hover {
+
+    background-color: #363653;
+
+    color: #FFFFFF;
+
+}
+
+/* Judul dan teks */
+
+h1,
+
+h2,
+
+h3 {
+
+    color: #363653;
+
+}
+
+em,
+
+.eyebrow {
+
+    color: #C7473A;
+
+}
+
+/* Bagian dengan latar alternatif */
+
+.section.alt {
+
+    background-color: #F3EEE6;
+
+}
+
+/* Kartu layanan dan informasi */
+
+.card,
+
+.product,
+
+.banner,
+
+.payment-container {
+
+    background-color: #FFFFFF;
+
+    border-color: #E6E1DA;
+
+    box-shadow: 0 8px 25px rgba(37, 38, 63, 0.08);
+
+}
+
+/* Ikon */
+
+.icon {
+
+    color: #C7473A;
+
+}
+
+/* Footer */
+
+footer {
+
+    background-color: #25263F;
+
+    color: #FFFFFF;
+
+}
+
+footer h3,
+
+footer a,
+
+footer p,
+
+footer span {
+
+    color: #FFFFFF;
+
+}
+
+footer a:hover {
+
+    color: #D97970;
+
+}
+
+footer .copyright {
+
+    border-color: rgba(255, 255, 255, 0.15);
+
+}

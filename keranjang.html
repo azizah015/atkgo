@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Keranjang | ATKGO.ID</title>
+
+    <style>
+
+        * {
+
+            box-sizing: border-box;
+
+        }
+
+        body {
+
+            margin: 0;
+
+            padding: 30px 16px;
+
+            font-family: Arial, sans-serif;
+
+            background: #fff8ef;
+
+            color: #383956;
+
+        }
+
+        .container {
+
+            max-width: 800px;
+
+            margin: 30px auto;
+
+            padding: 30px;
+
+            background: white;
+
+            border-radius: 16px;
+
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+
+        }
+
+        h1 {
+
+            margin-top: 0;
+
+        }
+
+        .item {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 15px;
+
+            padding: 18px 0;
+
+            border-bottom: 1px solid #eee;
+
+        }
+
+        .item-info {
+
+            flex: 1;
+
+        }
+
+        .item-name {
+
+            font-weight: bold;
+
+        }
+
+        .item-price {
+
+            margin-top: 7px;
+
+            color: #777;
+
+        }
+
+        .quantity {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+        }
+
+        .quantity button,
+
+        .remove {
+
+            padding: 7px 12px;
+
+            border: 1px solid #ddd;
+
+            border-radius: 7px;
+
+            background: white;
+
+            cursor: pointer;
+
+        }
+
+        .remove {
+
+            color: #df332b;
+
+        }
+
+        .total {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 12px;
+
+            margin-top: 25px;
+
+            padding-top: 20px;
+
+            border-top: 2px solid #eee;
+
+            font-size: 20px;
+
+            font-weight: bold;
+
+        }
+
+        .btn {
+
+            display: block;
+
+            width: 100%;
+
+            margin-top: 20px;
+
+            padding: 15px;
+
+            border: none;
+
+            border-radius: 9px;
+
+            background: #df332b;
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            text-align: center;
+
+            text-decoration: none;
+
+            cursor: pointer;
+
+        }
+
+        .back {
+
+            display: block;
+
+            margin-top: 18px;
+
+            text-align: center;
+
+            color: #383956;
+
+            text-decoration: none;
+
+        }
+
+        .empty {
+
+            padding: 30px 0;
+
+            text-align: center;
+
+            color: #777;
+
+        }
+
+        @media (max-width: 480px) {
+
+            .container {
+
+                padding: 20px;
+
+            }
+
+            .item {
+
+                flex-wrap: wrap;
+
+            }
+
+            .quantity {
+
+                flex-wrap: wrap;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<main class="container">
+
+    <h1>Keranjang Layanan</h1>
+
+    <p>Periksa layanan yang ingin Anda pesan.</p>
+
+    <div id="daftar-keranjang"></div>
+
+    <div class="total">
+
+        <span>Total</span>
+
+        <span id="total-harga">Rp0</span>
+
+    </div>
+
+    <a href="pembayaran.html" class="btn" id="btn-pembayaran">
+
+        Lanjut ke Pembayaran →
+
+    </a>
+
+    <a href="produk.html" class="back">
+
+        ← Kembali ke Layanan
+
+    </a>
+
+</main>
+
+<script>
+
+    const KUNCI_KERANJANG = "atkgo_cart";
+
+    function ambilKeranjang() {
+
+        try {
+
+            return JSON.parse(
+
+                localStorage.getItem(KUNCI_KERANJANG) || "[]"
+
+            );
+
+        } catch (error) {
+
+            return [];
+
+        }
+
+    }
+
+    function simpanKeranjang(data) {
+
+        localStorage.setItem(
+
+            KUNCI_KERANJANG,
+
+            JSON.stringify(data)
+
+        );
+
+    }
+
+    function rupiah(angka) {
+
+        return new Intl.NumberFormat("id-ID", {
+
+            style: "currency",
+
+            currency: "IDR",
+
+            maximumFractionDigits: 0
+
+        }).format(angka);
+
+    }
+
+    function tampilkanKeranjang() {
+
+        const keranjang = ambilKeranjang();
+
+        const daftar = document.getElementById("daftar-keranjang");
+
+        const totalElemen = document.getElementById("total-harga");
+
+        const tombolBayar = document.getElementById("btn-pembayaran");
+
+        daftar.replaceChildren();
+
+        let total = 0;
+
+        if (keranjang.length === 0) {
+
+            const pesan = document.createElement("p");
+
+            pesan.className = "empty";
+
+            pesan.textContent = "Keranjang Anda masih kosong.";
+
+            daftar.appendChild(pesan);
+
+            tombolBayar.style.pointerEvents = "none";
+
+            tombolBayar.style.opacity = "0.5";
+
+        } else {
+
+            tombolBayar.style.pointerEvents = "auto";
+
+            tombolBayar.style.opacity = "1";
+
+            keranjang.forEach((layanan, index) => {
+
+                const jumlah = Math.max(1, Number(layanan.qty) || 1);
+
+                const harga = Math.max(0, Number(layanan.price) || 0);
+
+                const subtotal = harga * jumlah;
+
+                total += subtotal;
+
+                const baris = document.createElement("div");
+
+                baris.className = "item";
+
+                const info = document.createElement("div");
+
+                info.className = "item-info";
+
+                const nama = document.createElement("div");
+
+                nama.className = "item-name";
+
+                nama.textContent = layanan.name || "Layanan";
+
+                const hargaSatuan = document.createElement("div");
+
+                hargaSatuan.className = "item-price";
+
+                hargaSatuan.textContent = rupiah(harga) + " / layanan";
+
+                info.append(nama, hargaSatuan);
+
+                const kontrol = document.createElement("div");
+
+                kontrol.className = "quantity";
+
+                const kurang = document.createElement("button");
+
+                kurang.type = "button";
+
+                kurang.textContent = "−";
+
+                kurang.setAttribute("aria-label", "Kurangi jumlah");
+
+                kurang.addEventListener("click", () => {
+
+                    const data = ambilKeranjang();
+
+                    if (data[index].qty > 1) {
+
+                        data[index].qty--;
+
+                    } else {
+
+                        data.splice(index, 1);
+
+                    }
+
+                    simpanKeranjang(data);
+
+                    tampilkanKeranjang();
+
+                });
+
+                const jumlahText = document.createElement("span");
+
+                jumlahText.textContent = jumlah;
+
+                const tambah = document.createElement("button");
+
+                tambah.type = "button";
+
+                tambah.textContent = "+";
+
+                tambah.setAttribute("aria-label", "Tambah jumlah");
+
+                tambah.addEventListener("click", () => {
+
+                    const data = ambilKeranjang();
+
+                    data[index].qty = (Number(data[index].qty) || 1) + 1;
+
+                    simpanKeranjang(data);
+
+                    tampilkanKeranjang();
+
+                });
+
+                kontrol.append(kurang, jumlahText, tambah);
+
+                const subtotalText = document.createElement("strong");
+
+                subtotalText.textContent = rupiah(subtotal);
+
+                const hapus = document.createElement("button");
+
+                hapus.type = "button";
+
+                hapus.className = "remove";
+
+                hapus.textContent = "Hapus";
+
+                hapus.addEventListener("click", () => {
+
+                    const data = ambilKeranjang();
+
+                    data.splice(index, 1);
+
+                    simpanKeranjang(data);
+
+                    tampilkanKeranjang();
+
+                });
+
+                baris.append(info, kontrol, subtotalText, hapus);
+
+                daftar.appendChild(baris);
+
+            });
+
+        }
+
+        totalElemen.textContent = rupiah(total);
+
+    }
+
+    tampilkanKeranjang();
+
+</script>
+
+</body>
+
+</html>

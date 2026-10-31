@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Keranjang | ATKGO.ID</title>
+
+    <style>
+
+        * {
+
+            box-sizing: border-box;
+
+        }
+
+        body {
+
+            margin: 0;
+
+            padding: 30px 16px;
+
+            font-family: Arial, sans-serif;
+
+            background: #FAF7F2;
+
+            color: #363653;
+
+        }
+
+        .container {
+
+            max-width: 800px;
+
+            margin: 30px auto;
+
+            padding: 30px;
+
+            background: #FFFFFF;
+
+            border-radius: 16px;
+
+            box-shadow: 0 8px 25px rgba(37, 38, 63, 0.08);
+
+        }
+
+        h1 {
+
+            margin-top: 0;
+
+        }
+
+        .item {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 15px;
+
+            padding: 18px 0;
+
+            border-bottom: 1px solid #E6E1DA;
+
+        }
+
+        .item button {
+
+            padding: 7px 12px;
+
+            border: none;
+
+            border-radius: 6px;
+
+            background: #C7473A;
+
+            color: white;
+
+            cursor: pointer;
+
+        }
+
+        .total {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            margin-top: 25px;
+
+            font-size: 20px;
+
+            font-weight: bold;
+
+        }
+
+        .btn {
+
+            display: block;
+
+            margin-top: 20px;
+
+            padding: 14px;
+
+            border-radius: 8px;
+
+            text-align: center;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+        }
+
+        .checkout {
+
+            background: #C7473A;
+
+            color: white;
+
+        }
+
+        .back {
+
+            border: 1px solid #363653;
+
+            color: #363653;
+
+        }
+
+        @media (max-width: 480px) {
+
+            .container {
+
+                padding: 20px;
+
+            }
+
+            .item {
+
+                align-items: flex-start;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <main class="container">
+
+        <h1>Keranjang Layanan</h1>
+
+        <p>Periksa layanan yang ingin kamu pesan.</p>
+
+        <div id="daftar-keranjang">
+
+            Memuat keranjang...
+
+        </div>
+
+        <div class="total">
+
+            <span>Total</span>
+
+            <span id="total-harga">Rp0</span>
+
+        </div>
+
+        <a href="pembayaran.html" class="btn checkout">
+
+            Lanjut ke Pembayaran →
+
+        </a>
+
+        <a href="produk.html" class="btn back">
+
+            ← Kembali ke Layanan
+
+        </a>
+
+    </main>
+
+    <script>
+
+        const KUNCI_KERANJANG = "atkgo_cart";
+
+        const daftar = document.getElementById("daftar-keranjang");
+
+        const totalHarga = document.getElementById("total-harga");
+
+        function rupiah(angka) {
+
+            return new Intl.NumberFormat("id-ID", {
+
+                style: "currency",
+
+                currency: "IDR",
+
+                maximumFractionDigits: 0
+
+            }).format(angka);
+
+        }
+
+        function tampilkanKeranjang() {
+
+            const keranjang = JSON.parse(
+
+                localStorage.getItem(KUNCI_KERANJANG) || "[]"
+
+            );
+
+            daftar.innerHTML = "";
+
+            let total = 0;
+
+            if (keranjang.length === 0) {
+
+                daftar.textContent = "Keranjang kamu masih kosong.";
+
+                totalHarga.textContent = rupiah(0);
+
+                return;
+
+            }
+
+            keranjang.forEach((item, index) => {
+
+                const jumlah = Number(item.qty) || 1;
+
+                const harga = Number(item.price) || 0;
+
+                const subtotal = harga * jumlah;
+
+                total += subtotal;
+
+                const baris = document.createElement("div");
+
+                baris.className = "item";
+
+                const informasi = document.createElement("div");
+
+                informasi.textContent =
+
+                    `${item.name} × ${jumlah} — ${rupiah(subtotal)}`;
+
+                const hapus = document.createElement("button");
+
+                hapus.type = "button";
+
+                hapus.textContent = "Hapus";
+
+                hapus.addEventListener("click", () => {
+
+                    const data = JSON.parse(
+
+                        localStorage.getItem(KUNCI_KERANJANG) || "[]"
+
+                    );
+
+                    data.splice(index, 1);
+
+                    localStorage.setItem(
+
+                        KUNCI_KERANJANG,
+
+                        JSON.stringify(data)
+
+                    );
+
+                    tampilkanKeranjang();
+
+                });
+
+                baris.append(informasi, hapus);
+
+                daftar.appendChild(baris);
+
+            });
+
+            totalHarga.textContent = rupiah(total);
+
+        }
+
+        tampilkanKeranjang();
+
+    </script>
+
+</body>
+
+</html>

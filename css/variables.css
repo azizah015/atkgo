@@ -2,18 +2,39 @@
    VARIABLES — ubah warna, font, dan ukuran utama di sini
    ========================================================== */
 :root {
-  /* Warna brand */
-  --red:   #EF3938;
-  --navy:  #3A3B5A;
-  --cream: #FFF8EA;
 
-  /* Warna pendukung */
-  --paper: #FFFDF8;   /* latar halaman */
-  --ink:   #292A40;   /* teks utama */
-  --muted: #6D6E7C;   /* teks sekunder */
-  --line:  #E9DFD0;   /* garis / border */
-  --footer-bg: #25263B;
+    /* Warna utama ATKGO.ID */
 
-  /* Font */
-  --font-main: Arial, Helvetica, sans-serif;
+    --navy: #363653;
+
+    --navy-dark: #25263F;
+
+    /* Warna identitas logo */
+
+    --red: #C7473A;
+
+    --red-light: #D97970;
+
+    /* Warna latar */
+
+    --cream: #FAF7F2;
+
+    --white: #FFFFFF;
+
+    /* Warna teks */
+
+    --text: #333333;
+
+    --text-muted: #737383;
+
+    /* Warna tambahan */
+
+    --border: #E6E1DA;
+
+    --card-bg: #FFFFFF;
+
+    /* Bayangan */
+
+    --shadow: 0 8px 25px rgba(37, 38, 63, 0.08);
+
 }
